@@ -24,12 +24,29 @@
           <label>rotateZ: {{ rotateZ }}deg; </label>
           <input type="range" min="-180" max="180" v-model="rotateZ" />
 
+          <label>Box Color: {{ boxColor }}</label>
+          <input type="text" v-model="boxColor"/>
+
+          <label>Box Radius: {{ boxRadius }}px</label>
+          <input type="range" min="0" max="100" v-model="boxRadius"/>
+
+          <label>Border Color: {{ borderColor }}</label>
+          <input type="text" v-model="borderColor"/>
+
+          <label>Border Radius: {{ borderRadius }}px</label>
+          <input type="range" min="0" max="100" v-model="borderRadius"/>
+
+
+          <br/>
+          <br/>
+          <hr/>
+
           <button type="button" @click.prevent="reset">Reset</button>
-          <button type="button">Copy</button>
+          
         </div>
       </section>
       <section class="output">
-        <div class="box-container">
+        <div class="box-container" :style="boxContainer">
           <div class="box" :style="box"></div>
         </div>
       </section>
